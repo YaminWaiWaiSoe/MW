@@ -55,8 +55,8 @@ jobs:
         run: |
           set +eo pipefail
           mkdir results
-          touch results/test.xml
-          mvn -B test --file results/test.xml
+          touch results/pom.xml
+          mvn --batch-mode --update-snapshots verify results/pom.xml
           cd results
           trxname=$(ls)
           trxfile=$(<$trxname)
