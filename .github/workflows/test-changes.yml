@@ -54,20 +54,23 @@ jobs:
       - name: Run the Maven verify phase
         run: |
           set +eo pipefail
-          mvn -B test --file results/pom.xml
+          mkdir results
+          touch results/test.xml
+          mvn -B test --file results/test.xml
           cd results
           trxname=$(ls)
           trxfile=$(<$trxname)
           echo 'RESULTS<<EOF' >> $GITHUB_ENV
           echo "$trxfile" >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
+          
       - name: Post Results
         uses: indiesdev/curl@v1
         with:
             url: ${{ secrets.RESULTSENDPOINT }}
             method: "POST"
             accept: 200,201,204
-            headers: '{ "Content-Type": "text/plain", "Lang": "csharp", "Author": "${{ github.actor }}", "Repository": "${{ github.repository }}", "Branch": "${{ github.ref_name }}" }'
+            headers: '{ "Content-Type": "text/plain", "Lang": "java", "Author": "${{ github.actor }}", "Repository": "${{ github.repository }}", "Branch": "${{ github.ref_name }}" }'
             body: "${{ env.RESULTS }}"
             timeout: 10000
             is_debug: true
