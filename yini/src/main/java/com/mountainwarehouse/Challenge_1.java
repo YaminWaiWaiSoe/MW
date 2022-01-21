@@ -1,6 +1,6 @@
 package com.mountainwarehouse;
 
-public static class Challenge_1 {
+public class Challenge_1 {
 
 	/**
 	 * Receives an amount and returns the total amount including tax.

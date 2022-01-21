@@ -1,6 +1,6 @@
 package com.mountainwarehouse;
 
-public static class Challenge_2 {
+public class Challenge_2 {
     /**
      * During your time at mountain warheouse you will often have to go bug fix your
      * own (and other peoples!) code.

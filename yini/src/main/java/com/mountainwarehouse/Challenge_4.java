@@ -1,6 +1,6 @@
 package com.mountainwarehouse;
 
-public static class Challenge_4 {
+public class Challenge_4 {
 
 	/**
 	 * For this task you will have to calculate and return the stamp duty of a
@@ -28,8 +28,8 @@ public static class Challenge_4 {
 		if (propertyPrice <= 300001)
 			return 0;
 
-		var startingValueForTax = propertyPrice;
-		var tax = 0;
+		int startingValueForTax = propertyPrice;
+		int tax = 0;
 
 		if (startingValueForTax > 1500000) {
 			throw new RuntimeException("Not implemented");

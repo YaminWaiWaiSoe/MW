@@ -1,19 +1,20 @@
+package com.mountainwarehouse;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 import java.util.Collection;
 
-import org.junit.Assert;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
+//import org.junit.Assert;
+//import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class Challenge1_AddTax_ShouldCalculate {
-    @Parameters
+    @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
                 { 10, 0.5, 15 },
@@ -35,6 +36,6 @@ public class Challenge1_AddTax_ShouldCalculate {
 
     @Test
     public void test() {
-        assertEquals(fExpectedResult, Challenge_1.AddTax(fNonTaxAmount, fTaxRate));
+        assertEquals(fExpectedResult, Challenge_1.Add_Tax(fNonTaxAmount, fTaxRate));
     }
 }
