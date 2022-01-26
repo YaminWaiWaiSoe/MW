@@ -32,17 +32,36 @@ public class Challenge_4 {
 		int tax = 0;
 
 		if (startingValueForTax > 1500000) {
-			throw new RuntimeException("Not implemented");
-		}
+            startingValueForTax = startingValueForTax-1500000;//get the price over 1.5M
+            tax= ((int)((12*startingValueForTax)/100));//find 12%
+            //throw new RuntimeException("Not implemented");
+            startingValueForTax = propertyPrice;
+        }
 
-		if (startingValueForTax > 925000) {
-			throw new RuntimeException("Not implemented");
-		}
+        if (startingValueForTax > 925000) {
+            
+            if(startingValueForTax<1500000){
+                startingValueForTax=startingValueForTax-925000;
+                tax = ((int)((10*startingValueForTax)/100));//find 10% of the value above 300k and add onto the total tax
+            }
+            else{
+                tax=tax+57500;//10% of 574,999
+            }
+            //throw new RuntimeException("Not implemented");
+            startingValueForTax = propertyPrice;
+        }
 
-		if (startingValueForTax > 300000) {
-			throw new RuntimeException("Not implemented");
-		}
-
+        if (startingValueForTax > 300000) {
+            if(startingValueForTax<925000){
+                startingValueForTax=startingValueForTax-300000;
+                tax=((int)((5*startingValueForTax)/100));//find 5% of the value above 300k and add onto the total tax
+            }
+            else{
+                tax=tax+31250;//5% on 624,999
+            }
+    		//throw new RuntimeException("Not implemented");
+        }
+        
 		return tax;
 	}
 }

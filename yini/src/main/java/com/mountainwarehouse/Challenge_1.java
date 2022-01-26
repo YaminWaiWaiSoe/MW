@@ -10,21 +10,25 @@ public class Challenge_1 {
 	 * @return Return the price including tax.
 	 */
 	public static double Add_Tax(double nonTaxAmount, double taxRate) {
-		throw new RuntimeException("Not implemented");
+        double taxAmount = nonTaxAmount * (1+taxRate);
+        return taxAmount;
+//		throw new RuntimeException("Not implemented");
 	}
 
 	/**
 	 * Takes in the current price and returns the price after discount has been
 	 * deducted.
 	 * If the discount value is not valid then this method should return -1
-	 * 
+	 *  
 	 * @param currentPrice The current price of the product.
 	 * @param discount     The percentage off of the rrp to be applied. E.g. 10% =
 	 *                     0.1
 	 * @return Returns the price after discount.
 	 */
 	public static double Discount(double currentPrice, double discount) {
-		throw new RuntimeException("Not implemented");
+        double discountPrice = currentPrice * (1-discount);
+        return discountPrice;
+//		throw new RuntimeException("Not implemented");
 	}
 
 	/**
@@ -37,7 +41,15 @@ public class Challenge_1 {
 	 * @return Returns total value of goods
 	 */
 	public static double Buy_One_Get_One_Half_Price(double item1, double item2) {
-		throw new RuntimeException("Not implemented");
+        double totalValue;
+        if(item1<item2){
+            totalValue=item1;
+        }
+        else{
+            totalValue=item2;
+        }
+        return totalValue;
+		//throw new RuntimeException("Not implemented");
 	}
 
 	/**
@@ -47,7 +59,13 @@ public class Challenge_1 {
 	 * @return Returns the total value of goods.
 	 */
 	public static double Calculate_Total_Cost(double[] amounts) {
-		throw new RuntimeException("Not implemented");
+        double arrayTotal = 0;
+        int i;
+		for(i=0; i<amounts.length;i++){
+            arrayTotal = arrayTotal + amounts[i];
+        }
+        return arrayTotal;
+//		throw new RuntimeException("Not implemented");
 	}
 
 }

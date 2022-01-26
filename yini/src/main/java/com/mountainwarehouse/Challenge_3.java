@@ -21,11 +21,25 @@ public class Challenge_3 {
         HashMap<String, Double> branchSales = new HashMap<String, Double>();
 
         // TODO: Add branch sales to Hash Map
-
+        //SalesItem("ABC", 100, LocalDate.now())
+        for(int i =0; i<sales.length;i++){//loop the list of sales
+            Object value = Object.values(sales[i][1]);//get the value of totalSales
+            Object key = Object.values(sales[i][0]);//get the value of totalSales
+            branchSales.put((String)key,(double)value);//put the sale into hashmap 
+            // branchSales.put(Integer.toString(i),(int)sales[i][1]);
+        }
+    
+            
         // TODO: Sort/get entry with highest sales value
+        int biggestSale=(Collections.max(branchSales.values()));
+        String biggestSaleBranch = biggestSale.getKey();
 
         // TODO: Return branch
+        return biggestSaleBranch;
 
-        return "";
+        //add dictionary
+        //go through sales
+        //loop through dictionary add branch
+        //add value to existing value
     }
 }
